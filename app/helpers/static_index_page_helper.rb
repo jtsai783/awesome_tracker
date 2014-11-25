@@ -1,0 +1,2 @@
+module StaticIndexPageHelper
+end

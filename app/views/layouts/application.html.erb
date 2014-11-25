@@ -8,6 +8,13 @@
 </head>
 <body>
 
+<% if current_user.nil? %>
+<% else %>
+	<%= current_user.username %>
+	<%= button_to "loggggout", session_url, method: :delete %>
+<% end %>
+
+<br>
 <%= yield %>
 
 </body>
