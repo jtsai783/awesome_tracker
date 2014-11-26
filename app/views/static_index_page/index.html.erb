@@ -1,9 +1,14 @@
 <div class="wrapper-whole-page">
-<nav class="nav-index-page">
-	Hello, <span class="white"><%= current_user.username.upcase %></span>
-</nav>
-<div class="content-container">
-	<div class="project-container">
+	<nav class="nav-index-page">
+		<div class="username-and-logout-button">
+			<div class="greeting-username">
+				<strong><span class="white">Hello, <%= current_user.username %></span></strong>
+			</div>
+			<button type="button" class="nav-log-out btn btn-danger btn-xs">Log Out</button>
+		</div>
+	</nav>
+	<div class="content-container">
+		<div class="project-container">
+		</div>
 	</div>
-</div>
 </div>
