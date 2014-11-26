@@ -6,4 +6,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-User.create(username: 'apple', password: 'apple2');
+ActiveRecord::Base.transaction do	
+	User.create(username: 'apple', password: 'apple2')
+	Project.create(user_id: 1, title: "Burrito Finder")
+end
