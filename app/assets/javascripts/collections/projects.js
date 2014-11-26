@@ -5,3 +5,5 @@ AwesomeTracker.Collections.Projects = Backbone.Collection.extend({
 	model: AwesomeTracker.Models.Project,
 	url: '/api/projects'
 });
+
+AwesomeTracker.projects = new AwesomeTracker.Collections.Projects();
