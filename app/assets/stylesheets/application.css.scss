@@ -25,6 +25,12 @@ input.form-control.log-in-input{
 	margin-top: 5px;
 }
 
+input.log-in-button {
+	background-color: #6096BD;
+	color: white;
+	font-weight: bolder;
+}
+
 .log-in-wrapper {
 	background-color: #E9E9E9;
 	width: 333px;
@@ -36,6 +42,10 @@ input.form-control.log-in-input{
 	display: block;
 	background-color: white;
 	height: 50px;
+}
+
+.log-in-header-center {
+	
 }
 
 // input {
