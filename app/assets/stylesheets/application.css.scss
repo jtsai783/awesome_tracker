@@ -28,7 +28,6 @@ input.form-control.log-in-input{
 input.log-in-button {
 	background-color: #6096BD;
 	color: white;
-	font-weight: bolder;
 }
 
 .log-in-wrapper {
@@ -49,17 +48,23 @@ input.log-in-button {
 	margin-left: auto;
 	margin-top: 10px;
 	display: inline-block;
+	width: 100%;
+	text-align: center;
 }
 
 h1 {
 	margin: 0px;
 }
 
-span.header-awesome {
+.bolder {
+	font-weight: bolder;
+}
+
+.awesome-blue {
 	color: #5283AF;
 }
 
-span.header-tracker {
+.awesome-orange {
 	color: #EB7C19;
 }
 // input {
