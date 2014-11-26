@@ -12,5 +12,4 @@ ActiveRecord::Base.transaction do
 	Project.create(user_id: 1, title: "Food Trucker")
 	Project.create(user_id: 1, title: "Pied Piper")
 
-
 end
