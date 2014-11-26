@@ -7,7 +7,20 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-	
+
+<% if logged_in? %>
+	<nav class="navbar navbar-default navbar-fixed-top">
+		<div class="container">
+			<p class="navbar-text">Hello, <%= current_user.username %></p>
+			<form action="<%= session_url %>" method="POST" class="navbar-form">
+				<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+				<input type="hidden" name="_method" value="DELETE">
+				<input type="submit" class="nav-log-out btn btn-default" value="Log Out">
+			</form>
+		</div>
+	</nav>
+<% end %>
+
 <%= yield %>
 
 </body>
