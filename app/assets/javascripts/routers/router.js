@@ -5,6 +5,7 @@ var Backbone = window.Backbone;
 AwesomeTracker.Routers.Router = Backbone.Router.extend({
 	initialize: function (option) {
 		this.$rootEl = option.$rootEl;
+		this.$projectEl = this.$rootEl.find('.project-container');
 		this.projects = option.projects;
 	},
 
