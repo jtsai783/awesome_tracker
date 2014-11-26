@@ -19,13 +19,13 @@
     <form action="<%= action %>" method="POST">
         <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
         <div class="input-group input-group-lg">
-            <input type="text" name="user[username]" id="user_username" placeholder="Username"  class="form-control log-in-input">
+            <input type="text" name="user[username]" id="user_username" placeholder="Username" class="form-control log-in-input">
         </div>
         <div class="input-group input-group-lg">
             <input class="form-control log-in-input" type="password" name="user[password]" id="user_password" placeholder="Password">
         </div>
         <div class="input-group">
-            <input type="submit" class="form-control log-in-input log-in-button bolder" value="<%= button_text %>">
+            <input type="submit" class="form-control log-in-input bg-blue white bolder" value="<%= button_text %>">
         </div>
     </form>
 </div>
