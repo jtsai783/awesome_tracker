@@ -9,4 +9,8 @@
 ActiveRecord::Base.transaction do	
 	User.create(username: 'apple', password: 'apple2')
 	Project.create(user_id: 1, title: "Burrito Finder")
+	Project.create(user_id: 1, title: "Food Trucker")
+	Project.create(user_id: 1, title: "Pied Piper")
+
+
 end

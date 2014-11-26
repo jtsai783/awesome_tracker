@@ -18,14 +18,14 @@ AwesomeTracker.Routers.Router = Backbone.Router.extend({
 			collection: this.projects,
 		});
 		this.projects.fetch();
-		this._swapView(indexView);
+		this._swapProjectView(indexView);
 	},
 
-	_swapView: function (view) {
-		if (typeof this.currentView !== 'undefined') {
-			this.currentView.remove();
+	_swapProjectView: function (view) {
+		if (typeof this.currentProjectView !== 'undefined') {
+			this.currentProjectView.remove();
 		}
-		this.currentView = view;
-		this.$rootEl.html(view.render().$el);
+		this.currentProjectView = view;
+		this.$projectEl.html(view.render().$el);
 	}
 });

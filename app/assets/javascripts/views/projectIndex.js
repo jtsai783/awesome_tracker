@@ -2,12 +2,20 @@
 var AwesomeTracker = window.AwesomeTracker;
 var Backbone = window.Backbone;
 var JST = window.JST;
-AwesomeTracker.Views.ProjectIndex = Backbone.View.extend({
+// var console = window.console;
+AwesomeTracker.Views.ProjectIndex = Backbone.CompositeView.extend({
 
 	template: JST.project_index,
 
 	initialize: function () {
-		this.listenTo(this.collection, 'sync', this.render);
+		this.listenTo(this.collection, 'add', this.addProjectIndexItem);
+	},
+
+	addProjectIndexItem: function (project) {
+		var subview = new AwesomeTracker.Views.ProjectIndexItem({
+			model: project
+		});
+		this.addSubview('.project-index', subview);
 	},
 
 	render: function () {
