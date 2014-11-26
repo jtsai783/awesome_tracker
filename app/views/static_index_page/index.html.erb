@@ -1,14 +1,19 @@
 <div class="wrapper-whole-page">
-	<nav class="nav-index-page">
-		<div class="username-and-logout-button">
-			<div class="greeting-username">
-				<strong><span class="white">Hello, <%= current_user.username %></span></strong>
-			</div>
-			<button type="button" class="nav-log-out btn btn-danger btn-xs">Log Out</button>
+
+	<nav class="navbar navbar-default navbar-fixed-top">
+		<div class="container">
+			<p class="navbar-text">Hello, <%= current_user.username %></p>
+			<form action="<%= session_url %>" method="POST" class="navbar-form">
+				<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+				<input type="hidden" name="_method" value="DELETE">
+				<input type="submit" class="nav-log-out btn btn-default" value="Log Out">
+			</form>
 		</div>
 	</nav>
+
 	<div class="content-container">
 		<div class="project-container">
 		</div>
 	</div>
+
 </div>

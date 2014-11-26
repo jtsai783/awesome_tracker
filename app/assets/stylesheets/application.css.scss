@@ -18,6 +18,7 @@
 
 body {
 	background-color: #6096BD;
+	height: 100%;
 }
 
 .bolder {
@@ -75,11 +76,11 @@ h1 {
 	margin: 0px;
 }
 
-nav.nav-index-page {
-	height: 30px;
-	display: block;
-	background-color: #256188;
-}
+// nav.nav-index-page {
+// 	height: 30px;
+// 	display: block;
+// 	background-color: #256188;
+// }
 
 .project-index-item {
 	background-color: white;
@@ -87,19 +88,24 @@ nav.nav-index-page {
 	margin: 5px;
 }
 
-.project-container {
-	width: 400px;
-	float: left;
+// .project-container {
+// 	width: 400px;
+// 	float: left;
 
-}
+// }
 
-.username-and-logout-button {
-	margin-top: 4px;
-	margin-right: 10px;
-	float: right;
-}
+// .username-and-logout-button {
+// 	margin-top: 4px;
+// 	margin-right: 10px;
+// 	float: right;
+// }
 
-.greeting-username {
-	display: inline-block;
-	margin-right: 5px;
-}
+// .greeting-username {
+// 	display: inline-block;
+// 	margin-right: 5px;
+// }
+
+// .content-container {
+// 	background-color: #F7F6F6;
+// 	height: 100%;
+// }
