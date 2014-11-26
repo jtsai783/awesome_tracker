@@ -1,3 +1,11 @@
+GIT
+  remote: https://github.com/twbs/bootstrap-sass.git
+  revision: d956caf3b6c141303c7ca93f693bf3393af7c839
+  branch: next
+  specs:
+    bootstrap-sass (3.3.1.0)
+      sass (~> 3.2)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -28,6 +36,8 @@ GEM
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
     arel (5.0.1.20140414130214)
+    autoprefixer-rails (4.0.1)
+      execjs
     bcrypt (3.1.9)
     better_errors (2.0.0)
       coderay (>= 1.0.0)
@@ -128,9 +138,11 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  autoprefixer-rails
   bcrypt (~> 3.1.7)
   better_errors
   binding_of_caller
+  bootstrap-sass!
   jbuilder (~> 2.0)
   jquery-rails
   newrelic_rpm

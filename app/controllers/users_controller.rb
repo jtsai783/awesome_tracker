@@ -5,6 +5,7 @@ class UsersController < ApplicationController
 			login_user!(@user)
 			redirect_to root_url
 		else
+			render :new
 		end
 	end
 

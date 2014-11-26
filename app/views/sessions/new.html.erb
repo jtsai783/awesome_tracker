@@ -1,20 +1,18 @@
-Log In
-<form action="<%= session_url %>" method="POST">
-	<input type="hidden"
-	       name="authenticity_token"
-	       value="<%= form_authenticity_token %>">
-
-	 <label for="user_username">User Name</label>
-  <input type="text"
-         name="user[username]"
-         id="user_username">
-  <br>
-
-  <label for="user_password">Password</label>
-  <input type="password"
-         name="user[password]"
-         id="user_password">
-  <br>
-
-  <input type="submit">
-</form>
+<div class="log-in-header">
+    this be header
+</div>
+<div class="log-in-wrapper">
+    <h1><strong>Sign In</strong></h1>
+    <form action="<%= session_url %>" method="POST">
+        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+        <div class="input-group input-group-lg">
+            <input type="text" name="user[username]" id="user_username" placeholder="Username"  class="form-control log-in-input">
+        </div>
+        <div class="input-group input-group-lg">
+            <input class="form-control log-in-input" type="password" name="user[password]" id="user_password" placeholder="Password">
+        </div>
+        <div class="input-group">
+            <input type="submit" class="form-control log-in-input" value="SIGN IN">
+        </div>
+    </form>
+</div>

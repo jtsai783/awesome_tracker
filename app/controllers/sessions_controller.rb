@@ -13,6 +13,7 @@ class SessionsController < ApplicationController
 			user_params[:password]
 		)
 		if user.nil?
+			render :new
 		else
 			login_user!(user)
 			redirect_to root_url

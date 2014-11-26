@@ -46,3 +46,5 @@ group :development do
 end
 
 gem 'newrelic_rpm'
+gem 'bootstrap-sass', :git => 'https://github.com/twbs/bootstrap-sass.git', :branch => 'next'
+gem 'autoprefixer-rails'
