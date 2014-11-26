@@ -1,11 +1,22 @@
+<% if action == :signup %>
+	<% title = "Sign Up" %>
+	<% button_text = "SIGN UP" %>
+	<% action = users_url %>
+<% elsif action == :signin %>
+	<% title = "Sign In" %>
+	<% button_text = "SIGN IN" %>
+	<% action = session_url %>
+<% end %>
+
+
 <div class="log-in-header">
     <div class="log-in-header-center">
         AwesomeTracker
     </div>
 </div>
 <div class="log-in-wrapper">
-    <h1><strong>Sign In</strong></h1>
-    <form action="<%= session_url %>" method="POST">
+    <h1><strong><%= title %></strong></h1>
+    <form action="<%= action %>" method="POST">
         <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
         <div class="input-group input-group-lg">
             <input type="text" name="user[username]" id="user_username" placeholder="Username"  class="form-control log-in-input">
@@ -14,7 +25,7 @@
             <input class="form-control log-in-input" type="password" name="user[password]" id="user_password" placeholder="Password">
         </div>
         <div class="input-group">
-            <input type="submit" class="form-control log-in-input log-in-button" value="SIGN IN">
+            <input type="submit" class="form-control log-in-input log-in-button" value="<%= button_text %>">
         </div>
     </form>
 </div>
