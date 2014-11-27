@@ -9,7 +9,7 @@ AwesomeTracker.Routers.Router = Backbone.Router.extend({
 
 	routes: {
 
-		'/project/:id': 'projectShow',
+		'project/:id': 'getProject',
 		'': 'index'
 	},
 
@@ -21,13 +21,12 @@ AwesomeTracker.Routers.Router = Backbone.Router.extend({
 		this._swapView(indexView);
 	},
 
-	projectShow: function (id) {
-		debugger
+	getProject: function (id) {
 		var project = this.projects.getOrFetch(id);
-		var projectShow = new AwesomeTracker.Views.ProjectShow({
+		var projectShowView = new AwesomeTracker.Views.ProjectShow({
 			model: project
 		});
-		this._swapView(projectShow);
+		this._swapView(projectShowView);
 	},
 
 	_swapView: function (view) {
