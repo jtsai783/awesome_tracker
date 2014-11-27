@@ -6,5 +6,10 @@ module Api
 			@projects = current_user.projects
 			render json: @projects
 		end
+
+		def show
+			@project = Project.find_by_id(params[:id])
+			render :show
+		end
 	end
 end
