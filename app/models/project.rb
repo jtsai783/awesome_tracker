@@ -1,5 +1,6 @@
 class Project < ActiveRecord::Base
-	has_one :user
+	belongs_to :user
+	has_many :stories
 	validates :user_id, :title, presence: true
 
 	

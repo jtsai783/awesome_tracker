@@ -1,15 +1,15 @@
 'use strict';
 var AwesomeTracker = window.AwesomeTracker;
-var $ = window.$;
 var Backbone = window.Backbone;
 AwesomeTracker.Routers.Router = Backbone.Router.extend({
 	initialize: function (option) {
 		this.$rootEl = option.$rootEl;
-		this.$projectEl = this.$rootEl.find('.project-container');
 		this.projects = option.projects;
 	},
 
 	routes: {
+
+		'/project/:id': 'projectShow',
 		'': 'index'
 	},
 
@@ -18,14 +18,23 @@ AwesomeTracker.Routers.Router = Backbone.Router.extend({
 			collection: this.projects,
 		});
 		this.projects.fetch();
-		this._swapProjectView(indexView);
+		this._swapView(indexView);
 	},
 
-	_swapProjectView: function (view) {
-		if (typeof this.currentProjectView !== 'undefined') {
-			this.currentProjectView.remove();
+	projectShow: function (id) {
+		debugger
+		var project = this.projects.getOrFetch(id);
+		var projectShow = new AwesomeTracker.Views.ProjectShow({
+			model: project
+		});
+		this._swapView(projectShow);
+	},
+
+	_swapView: function (view) {
+		if (typeof this.currentView !== 'undefined') {
+			this.currentView.remove();
 		}
-		this.currentProjectView = view;
-		this.$projectEl.html(view.render().$el);
-	}
+		this.currentView = view;
+		this.$rootEl.html(view.render().$el);
+	},
 });
