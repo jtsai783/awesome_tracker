@@ -9,8 +9,10 @@ AwesomeTracker.Views.ProjectIndexItem = Backbone.View.extend({
 		'click': 'clickHandler'
 	},
 
-	clickHandler: function (event) {
-		
+	clickHandler: function () {
+		var id = this.model.get('id');
+		var url = '/project/' + id;
+		Backbone.history.navigate(url, {trigger: true});
 	},
 
 
