@@ -30,6 +30,7 @@ AwesomeTracker.Views.ProjectIndex = Backbone.CompositeView.extend({
 			user_id: userId,
 			title: title
 		});
+		$('input.project-name').val('')
 	},
 
 	render: function () {

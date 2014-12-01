@@ -25,6 +25,7 @@ AwesomeTracker.Views.ProjectShow = Backbone.CompositeView.extend({
 			list: 'icebox',
 			project_id: projectId
 		});
+		$('.story-title').val('');
 	},
 
 	saveOrds: function (event, ui) {
