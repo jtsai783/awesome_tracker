@@ -2,6 +2,7 @@
 var AwesomeTracker = window.AwesomeTracker;
 var Backbone = window.Backbone;
 var JST = window.JST;
+var $ = window.$;
 AwesomeTracker.Views.ProjectShow = Backbone.CompositeView.extend({
 	template: JST.project_show,
 
@@ -31,6 +32,9 @@ AwesomeTracker.Views.ProjectShow = Backbone.CompositeView.extend({
 		});
 		this.$el.html(content);
 		this.attachSubviews();
+		$('#list-current, #list-backlog, #list-icebox').sortable({
+			connectWith: '.connectedList'
+		});
 		return this;
 	}
 });
