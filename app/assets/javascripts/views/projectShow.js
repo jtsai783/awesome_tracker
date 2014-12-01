@@ -7,7 +7,24 @@ AwesomeTracker.Views.ProjectShow = Backbone.CompositeView.extend({
 	template: JST.project_show,
 
 	events: {
-		'sortstop': 'saveOrds'
+		'sortstop': 'saveOrds',
+		'click button.new-story': 'newStory'
+	},
+
+	initialize: function () {
+		this.collection = this.model.stories();
+		this.listenTo(this.model, 'sync', this.render);
+		this.listenTo(this.collection, 'add', this.addStoryIndexItem);
+	},
+
+	newStory: function () {
+		var title = $('.story-title').val();
+		var projectId = this.model.get('id');
+		this.collection.create({
+			title: title,
+			list: 'icebox',
+			project_id: projectId
+		});
 	},
 
 	saveOrds: function (event, ui) {
@@ -19,12 +36,6 @@ AwesomeTracker.Views.ProjectShow = Backbone.CompositeView.extend({
 		story.save({
 			list: listType
 		});
-	},
-
-	initialize: function () {
-		this.collection = this.model.stories();
-		this.listenTo(this.model, 'sync', this.render);
-		this.listenTo(this.collection, 'add', this.addStoryIndexItem);
 	},
 
 	addStoryIndexItem: function (story) {
