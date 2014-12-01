@@ -9,6 +9,7 @@ AwesomeTracker.Views.StoryIndexItem = Backbone.View.extend({
 		var content = this.template({
 			story: this.model
 		});
+		this.$el.attr('data-id', this.model.get('id'));
 		this.$el.html(content);
 		return this;
 	}

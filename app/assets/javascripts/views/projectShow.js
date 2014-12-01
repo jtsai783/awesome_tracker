@@ -6,6 +6,21 @@ var $ = window.$;
 AwesomeTracker.Views.ProjectShow = Backbone.CompositeView.extend({
 	template: JST.project_show,
 
+	events: {
+		'sortstop': 'saveOrds'
+	},
+
+	saveOrds: function (event, ui) {
+		var storyId = ui.item.data('id');
+		var listType = ui.item.parent().data('list');
+		var story = new AwesomeTracker.Models.Story({
+			id: storyId
+		});
+		story.save({
+			list: listType
+		});
+	},
+
 	initialize: function () {
 		this.collection = this.model.stories();
 		this.listenTo(this.model, 'sync', this.render);
