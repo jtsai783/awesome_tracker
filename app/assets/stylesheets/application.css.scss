@@ -80,36 +80,14 @@ h1 {
 	margin: 0px;
 }
 
-// nav.nav-index-page {
-// 	height: 30px;
-// 	display: block;
-// 	background-color: #256188;
-// }
-
 .project-index-item {
 	background-color: white;
 	height: 50px;
 	margin: 5px;
 }
 
-// .project-container {
-// 	width: 400px;
-// 	float: left;
-
-// }
-
-// .username-and-logout-button {
-// 	margin-top: 4px;
-// 	margin-right: 10px;
-// 	float: right;
-// }
-
-// .greeting-username {
-// 	display: inline-block;
-// 	margin-right: 5px;
-// }
-
-// .content-container {
-// 	background-color: #F7F6F6;
-// 	height: 100%;
-// }
+ul {
+	display: inline-block;
+	width: 200px;	
+	border: medium solid black;
+}
