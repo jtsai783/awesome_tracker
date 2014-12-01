@@ -3,6 +3,7 @@ var AwesomeTracker = window.AwesomeTracker;
 var Backbone = window.Backbone;
 var JST = window.JST;
 var $ = window.$;
+var _ = window._;
 AwesomeTracker.Views.ProjectShow = Backbone.CompositeView.extend({
 	template: JST.project_show,
 
@@ -20,10 +21,15 @@ AwesomeTracker.Views.ProjectShow = Backbone.CompositeView.extend({
 	newStory: function () {
 		var title = $('.story-title').val();
 		var projectId = this.model.get('id');
-		this.collection.create({
+		var newStory = new AwesomeTracker.Models.Story({
 			title: title,
-			list: 'icebox',
-			project_id: projectId
+			project_id: projectId,
+		});
+		var collection = this.collection;
+		newStory.save({}, {
+			success: function (story) {
+				collection.add(story);
+			}
 		});
 		$('.story-title').val('');
 	},
@@ -37,6 +43,16 @@ AwesomeTracker.Views.ProjectShow = Backbone.CompositeView.extend({
 		story.save({
 			list: listType
 		});
+		var listSelector = '#list-' + listType;
+		var sortArr = $(listSelector).sortable('toArray', {attribute: 'data-id'});
+		var order = 1;
+		_(sortArr).each(function (storyId) {
+			story = new AwesomeTracker.Models.Story({id: storyId});
+			story.save({
+				order: order
+			});
+			order = order + 1;
+		});
 	},
 
 	addStoryIndexItem: function (story) {
@@ -49,11 +65,11 @@ AwesomeTracker.Views.ProjectShow = Backbone.CompositeView.extend({
 			this.addSubview('#list-backlog', newStoryIndexItemView);
 		} else if (story.get('list') === 'icebox') {
 			this.addSubview('#list-icebox', newStoryIndexItemView);
-		}
-		
+		}		
 	},
 
 	render: function () {
+		// this.sortSubview();
 		var content = this.template({
 			project: this.model
 		});
@@ -63,5 +79,13 @@ AwesomeTracker.Views.ProjectShow = Backbone.CompositeView.extend({
 			connectWith: '.connectedList'
 		});
 		return this;
-	}
+	},
+
+	// sortSubview: function () {
+	// 	_(this.subviews()).each(function (subviewArr) {
+	// 		_.sortBy(subviewArr, function (child) {
+	// 			return child.model.get('order');
+	// 		});
+	// 	});
+	// }
 });

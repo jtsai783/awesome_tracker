@@ -16,7 +16,7 @@ module Api
 
 		private
 		def story_params
-			params.require(:story).permit(:list, :importance, :title, :type, :points, :project_id)
+			params.require(:story).permit(:list, :importance, :title, :type, :points, :project_id, :order)
 		end
 	end
 end
