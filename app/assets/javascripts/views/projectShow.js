@@ -15,7 +15,14 @@ AwesomeTracker.Views.ProjectShow = Backbone.CompositeView.extend({
 		var newStoryIndexItemView = new AwesomeTracker.Views.StoryIndexItem({
 			model: story
 		});
-		this.addSubview('.story-index', newStoryIndexItemView);
+		if (story.get('list') === 'current') {
+			this.addSubview('.current', newStoryIndexItemView);
+		} else if (story.get('list') === 'backlog') {
+			this.addSubview('.backlog', newStoryIndexItemView);
+		} else if (story.get('list') === 'icebox') {
+			this.addSubview('.icebox', newStoryIndexItemView);
+		}
+		
 	},
 
 	render: function () {
