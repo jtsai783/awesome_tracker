@@ -19,6 +19,7 @@ AwesomeTracker.Views.ProjectShow = Backbone.CompositeView.extend({
 		});
 		this.addSubview('.average-velocity', this.newVelocityView);
 		this.collection = this.model.stories();
+		this.collection.each(this.addStoryIndexItem.bind(this));
 		this.listenTo(this.model, 'sync', this.render);
 		this.listenTo(this.velocity, 'sync', this.newVelocityView.render.bind(this.newVelocityView));
 		this.listenTo(this.collection, 'add', this.addStoryIndexItem);

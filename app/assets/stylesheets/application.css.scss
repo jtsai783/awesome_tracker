@@ -96,24 +96,65 @@ h1 {
 
 ul {
 	display: inline-block;
-	width: 200px;	
-	border: medium solid black;
+	width: 100%;
+	border: thin solid black;
+	background-color: #484F57;
+	min-height: 500px;
 }
 
 .story-index-item {
 	background-color: #E4EFF7;
 	border: 1px solid white;
+	min-height: 25px;
 }
 
 .float-right {
 	float: right;
 }
 
-.project-index-header {
+
+.project-index-header-wrapper {
 	margin: 30px;
+}
+
+.project-index-header {
+	display:inline-block;
 }
 
 .navbar {
 	background-color: #256188;
 	border-color: #000000;
 }
+
+.list-wrapper {
+	width: 25%;
+	display: inline-block;
+	float: left;
+}
+
+.story-points {
+	margin-right: 20px;
+	font-weight: bolder;
+}
+
+.inline-block {
+	display: inline-block;
+}
+
+.project-title {
+	font-size: 2em;
+}
+
+.clearfix:after {
+     visibility: hidden;
+     display: block;
+     font-size: 0;
+     content: " ";
+     clear: both;
+     height: 0;
+     }
+.clearfix { display: inline-block; }
+/* start commented backslash hack \*/
+* html .clearfix { height: 1%; }
+.clearfix { display: block; }
+/* close commented backslash hack */

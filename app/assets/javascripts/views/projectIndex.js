@@ -13,6 +13,7 @@ AwesomeTracker.Views.ProjectIndex = Backbone.CompositeView.extend({
 	},
 
 	initialize: function () {
+		this.collection.each(this.addProjectIndexItem.bind(this));
 		this.listenTo(this.collection, 'add', this.addProjectIndexItem);
 	},
 
@@ -38,6 +39,7 @@ AwesomeTracker.Views.ProjectIndex = Backbone.CompositeView.extend({
 			projects: this.collection
 		});
 		this.$el.html(content);
+		this.attachSubviews();
 		return this;
 	}
 });

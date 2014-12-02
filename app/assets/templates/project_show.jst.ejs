@@ -1,19 +1,45 @@
-showing project
-<%= project.get('id') %>
-<%= project.get('title') %>
-<div class="average-velocity">
+
+<div class="project-show-top clearfix">
+
+	<div class="project-title inline-block">
+		<%= project.get('title') %>
+	</div>
+
+	<div class="average-velocity inline-block">
+	</div>
+	
+	<div class="float-right">
+		<input type="text" class="story-title"></input>
+		<button class="btn btn-default new-story">New Story</button>
+	</div>
 </div>
-Done
-<ul data-list="done" id="list-done" class="list-unstyled connectedList">
-</ul>
-Current
-<ul data-list="current" id="list-current" class="list-unstyled connectedList">
-</ul>
-Backlog
-<ul data-list="backlog" id="list-backlog" class="list-unstyled connectedList">
-</ul>
-Icebox
-<ul data-list="icebox" id="list-icebox" class="list-unstyled connectedList">
-</ul>
-<button class="btn btn-default new-story">New Story</button>
-<input type="text" class="story-title"></input>
+
+<div class="list-wrapper">
+	<div>
+		Done
+	</div>
+	<div>
+	  <ul data-list="done" id="list-done" class="list-unstyled connectedList">
+		</ul>
+	</div>
+</div>
+
+
+<div class="list-wrapper">
+	<div>Current</div>
+	<div><ul data-list="current" id="list-current" class="list-unstyled connectedList">
+		</ul></div>
+</div>
+
+<div class="list-wrapper">
+	<div>Backlog</div>
+	<div><ul data-list="backlog" id="list-backlog" class="list-unstyled connectedList">
+		</ul></div>
+</div>
+
+<div class="list-wrapper">
+	<div>Icebox</div>
+	<div><ul data-list="icebox" id="list-icebox" class="list-unstyled connectedList">
+		</ul></div>
+</div>
+
