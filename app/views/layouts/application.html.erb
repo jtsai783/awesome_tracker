@@ -9,7 +9,7 @@
 <body>
 
 <% if logged_in? %>
-	<nav class="navbar navbar-default navbar-fixed-top">
+	<nav class="navbar navbar-default navbar-fixed-top navbar-xs">
 		<div class="container">
 			<p class="navbar-text username" data-userid="<%= current_user.id %>">Hello, <%= current_user.username %></p>
 			<form action="<%= session_url %>" method="POST" class="navbar-form">

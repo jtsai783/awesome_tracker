@@ -26,7 +26,7 @@ body {
 }
 
 #main-content{
-	margin-top: 60px;
+	margin-top: 50px;
 }
 
 .bolder {
@@ -86,8 +86,12 @@ h1 {
 
 .project-index-item {
 	background-color: white;
+	display: inline-block;
 	height: 50px;
 	margin: 5px;
+	width: 200px;
+	border-radius: 10px;
+	padding: 5px;
 }
 
 ul {
@@ -99,4 +103,17 @@ ul {
 .story-index-item {
 	background-color: #E4EFF7;
 	border: 1px solid white;
+}
+
+.float-right {
+	float: right;
+}
+
+.project-index-header {
+	margin: 30px;
+}
+
+.navbar {
+	background-color: #256188;
+	border-color: #000000;
 }
