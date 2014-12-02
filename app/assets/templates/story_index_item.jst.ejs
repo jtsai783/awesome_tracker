@@ -1,1 +1,6 @@
 <%= story.get('title') %>
+<% if (story.get('points') === null) { %>
+	<button class="btn btn-default btn-xs assign-points">1</button>
+	<button class="btn btn-default btn-xs assign-points">2</button>
+	<button class="btn btn-default btn-xs assign-points">3</button>
+<% } %>

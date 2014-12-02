@@ -9,7 +9,7 @@ AwesomeTracker.Views.ProjectShow = Backbone.CompositeView.extend({
 
 	events: {
 		'sortstop': 'saveOrds',
-		'click button.new-story': 'newStory'
+		'click button.new-story': 'newStory',
 	},
 
 	initialize: function () {
