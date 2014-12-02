@@ -8,7 +8,6 @@ AwesomeTracker.Routers.Router = Backbone.Router.extend({
 	},
 
 	routes: {
-
 		'project/:id': 'showProject',
 		'': 'index'
 	},
