@@ -15,7 +15,6 @@ AwesomeTracker.Views.StoryIndexItem = Backbone.View.extend({
 	},
 
 	assignPoints: function (event) {
-		// var storyId = this.model.get('id');
 		var points = parseInt($(event.currentTarget).text());
 		this.model.save({
 			points: points
