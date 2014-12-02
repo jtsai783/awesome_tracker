@@ -15,7 +15,7 @@
     </div>
 </div>
 <div class="log-in-wrapper">
-    <h1 class="awesome-grey"><strong><%= title %></strong></h1>
+    <h1 class="awesome-grey auth-title"><strong><%= title %></strong></h1>
     <form action="<%= action %>" method="POST">
         <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
         <div class="input-group input-group-lg">
@@ -26,6 +26,16 @@
         </div>
         <div class="input-group">
             <input type="submit" class="form-control log-in-input bg-blue white bolder" value="<%= button_text %>">
+        </div>
+    </form>
+
+
+    <form action="<%= session_url %>" method="POST">
+        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+        <input type="hidden" name="user[username]" id="user_username" value="apple">
+        <input type="hidden" name="user[password]" id="user_password" value="apple2">
+        <div class="input-group">
+            <input type="submit" class="form-control log-in-input bg-blue white bolder" value="Guest Login">
         </div>
     </form>
 </div>
