@@ -23,9 +23,12 @@ AwesomeTracker.Routers.Router = Backbone.Router.extend({
 
 	showProject: function (id) {
 		var project = this.projects.getOrFetch(id);
+		var velocity = new AwesomeTracker.Models.Velocity({id: id});
 		var projectShowView = new AwesomeTracker.Views.ProjectShow({
-			model: project
+			model: project,
+			velocity: velocity
 		});
+		velocity.fetch();
 		this._swapView(projectShowView);
 	},
 

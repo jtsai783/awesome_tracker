@@ -7,5 +7,6 @@ Rails.application.routes.draw do
 	namespace :api, defaults: {format: :json} do
 		resources :projects
 		resources :stories
+		resources :velocity, only: [:show]
 	end
 end

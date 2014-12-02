@@ -12,9 +12,15 @@ AwesomeTracker.Views.ProjectShow = Backbone.CompositeView.extend({
 		'click button.new-story': 'newStory',
 	},
 
-	initialize: function () {
+	initialize: function (options) {
+		this.velocity = options.velocity;
+		this.newVelocityView = new AwesomeTracker.Views.AverageVelocity({
+			model: this.velocity
+		});
+		this.addSubview('.average-velocity', this.newVelocityView);
 		this.collection = this.model.stories();
 		this.listenTo(this.model, 'sync', this.render);
+		this.listenTo(this.velocity, 'sync', this.newVelocityView.render.bind(this.newVelocityView));
 		this.listenTo(this.collection, 'add', this.addStoryIndexItem);
 	},
 
@@ -53,6 +59,7 @@ AwesomeTracker.Views.ProjectShow = Backbone.CompositeView.extend({
 			});
 			order = order + 1;
 		});
+		this.velocity.fetch();
 	},
 
 	addStoryIndexItem: function (story) {
