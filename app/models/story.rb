@@ -1,6 +1,9 @@
 class Story < ActiveRecord::Base
 	belongs_to :project
 	after_initialize :ensure_list, :ensure_order
+	default_scope do
+		order('stories.order')
+	end
 
 	private
 	def ensure_order

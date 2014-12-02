@@ -65,27 +65,20 @@ AwesomeTracker.Views.ProjectShow = Backbone.CompositeView.extend({
 			this.addSubview('#list-backlog', newStoryIndexItemView);
 		} else if (story.get('list') === 'icebox') {
 			this.addSubview('#list-icebox', newStoryIndexItemView);
+		}	else if (story.get('list') === 'done') {
+			this.addSubview('#list-done', newStoryIndexItemView);
 		}		
 	},
 
 	render: function () {
-		// this.sortSubview();
 		var content = this.template({
 			project: this.model
 		});
 		this.$el.html(content);
 		this.attachSubviews();
-		$('#list-current, #list-backlog, #list-icebox').sortable({
+		$('#list-current, #list-backlog, #list-icebox, #list-done').sortable({
 			connectWith: '.connectedList'
 		});
 		return this;
-	},
-
-	// sortSubview: function () {
-	// 	_(this.subviews()).each(function (subviewArr) {
-	// 		_.sortBy(subviewArr, function (child) {
-	// 			return child.model.get('order');
-	// 		});
-	// 	});
-	// }
+	}
 });
