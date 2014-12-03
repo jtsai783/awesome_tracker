@@ -16,6 +16,8 @@
 //= require jquery.ui.autocomplete
 //= require bootstrap-sprockets
 //= require underscore
+//= require moment
+//= require moment-timezone
 //= require backbone
 //= require awesome_tracker
 //= require_tree ../templates

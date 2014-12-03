@@ -9,7 +9,15 @@ AwesomeTracker.Views.ProjectIndex = Backbone.CompositeView.extend({
 	template: JST.project_index,
 
 	events: {
-		'click button.new-project': 'newProject'
+		'click button.new-project': 'newProject',
+		'keyup input.project-name': 'detectEnter'
+
+	},
+
+	detectEnter: function (event) {
+		if (event.which === 13) {
+			this.newProject();
+		}
 	},
 
 	initialize: function () {
@@ -25,12 +33,14 @@ AwesomeTracker.Views.ProjectIndex = Backbone.CompositeView.extend({
 	},
 
 	newProject: function () {
-		var userId = $('p.username').data('userid');
+		var userId = $('p.navbar-username').data('userid');
 		var title = $('input.project-name').val();
-		this.collection.create({
+		if (title !== '') {
+			this.collection.create({
 			user_id: userId,
 			title: title
-		});
+			});	
+		}
 		$('input.project-name').val('');
 	},
 
