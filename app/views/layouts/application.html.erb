@@ -7,27 +7,29 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
 <% if logged_in? %>
 		<nav class="navbar navbar-default navbar-fixed-top navbar-xs">
-			<div class="inline-block branding">
-				AwesomeTracker
-			</div>
-		    <div class="user-control-wrapper float-right">
-		        <div class="inline-block">
-		            <p class="navbar-username" data-userid="<%= current_user.id %>">Hello,
-		                <%=current_user.username %>
-		            </p>
-		        </div>
-		        <div class="inline-block">
-		            <form action="<%= session_url %>" method="POST">
-		                <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-		                <input type="hidden" name="_method" value="DELETE">
-		                <input type="submit" class="nav-log-out btn btn-default btn-xs" value="Log Out">
-		            </form>
-		        </div>
-		    </div>
-		</nav>
+    <div class="inline-block branding">
+        <a class="link-to-home" href="/">AwesomeTracker</a>
+    </div>
+    <div class="user-control-wrapper float-right">
+        <div class="inline-block">
+            <p id="dropdownmenu1" class="dropdown-toggle navbar-username" data-toggle="dropdown" data-userid="<%= current_user.id %>" aria-expanded="true">
+                <%=current_user.username %><span class="caret"></span>
+            </p>
+            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                <li role="presentation">
+                    <form action="<%= session_url %>" method="POST" role="menuitem" tabindex="-1">
+                        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+                        <input type="hidden" name="_method" value="DELETE">
+                        <input type="submit" class="nav-log-out btn btn-default btn-xs" value="Log Out">
+                    </form>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+</nav>
 <% end %>
 
 <%= yield %>

@@ -97,7 +97,7 @@ h1 {
 	border: 1px solid rgb(187, 187, 187);
 }
 
-ul {
+ul.story-list {
 	display: inline-block;
 	width: 100%;
 	border: thin solid black;
@@ -173,6 +173,16 @@ ul {
 	margin-right: 20px;
 }
 
+.story-title {
+	margin-left: 10px;
+}
+
+.nav-log-out {
+	width: 100%;
+	border-color: white;
+}
+
+
 .clearfix:after {
      visibility: hidden;
      display: block;
@@ -186,3 +196,24 @@ ul {
 * html .clearfix { height: 1%; }
 .clearfix { display: block; }
 /* close commented backslash hack */
+
+a {
+}
+a:link {
+    color: white;
+    text-decoration: none;
+}
+ 
+a:active {
+    color: white;
+    text-decoration: none;
+}
+ 
+a:visited {
+    color: white;
+    text-decoration: none;
+}
+a:hover {
+    color: white;
+    text-decoration: none;
+}
