@@ -10,15 +10,22 @@
 
 <% if logged_in? %>
 		<nav class="navbar navbar-default navbar-fixed-top navbar-xs">
-		    <div class="container">
-		        <p class="navbar-text username" data-userid="<%= current_user.id %>">Hello,
-		            <%= current_user.username %>
-		        </p>
-		        <form action="<%= session_url %>" method="POST" class="navbar-form">
-		            <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-		            <input type="hidden" name="_method" value="DELETE">
-		            <input type="submit" class="nav-log-out btn btn-default" value="Log Out">
-		        </form>
+			<div class="inline-block branding">
+				AwesomeTracker
+			</div>
+		    <div class="user-control-wrapper float-right">
+		        <div class="inline-block">
+		            <p class="navbar-username" data-userid="<%= current_user.id %>">Hello,
+		                <%=current_user.username %>
+		            </p>
+		        </div>
+		        <div class="inline-block">
+		            <form action="<%= session_url %>" method="POST">
+		                <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+		                <input type="hidden" name="_method" value="DELETE">
+		                <input type="submit" class="nav-log-out btn btn-default btn-xs" value="Log Out">
+		            </form>
+		        </div>
 		    </div>
 		</nav>
 <% end %>
