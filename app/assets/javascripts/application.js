@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery.ui.sortable
+//= require jquery.ui.autocomplete
 //= require bootstrap-sprockets
 //= require underscore
 //= require backbone
