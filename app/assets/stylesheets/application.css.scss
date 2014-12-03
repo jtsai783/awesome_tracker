@@ -27,7 +27,7 @@ html, body {
 
 #main-content{
 	margin-top: 30px;
-	background-color: white;
+	background-color: #F7F6F6;
 	height: 100%;
 }
 
@@ -88,12 +88,13 @@ h1 {
 
 .project-index-item {
 	background-color: white;
+	color: #6392B9;
 	display: inline-block;
-	height: 50px;
+	height: 130px;
 	margin: 5px;
-	width: 200px;
-	border-radius: 10px;
+	width: 430px;
 	padding: 5px;
+	border: 1px solid rgb(187, 187, 187);
 }
 
 ul {

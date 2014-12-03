@@ -7,7 +7,9 @@ class Project < ActiveRecord::Base
 		done_stories = self.stories.where("list = 'done'")
 		points_sum = 0;
 		done_stories.each do |story|
-			points_sum = points_sum + story.points
+			if story.points != nil
+				points_sum = points_sum + story.points
+			end
 		end
 		points_sum
 	end
@@ -21,7 +23,9 @@ class Project < ActiveRecord::Base
 		current_stories = self.stories.where("list = 'current'")
 		points_sum = 0;
 		current_stories.each do |story|
-			points_sum = points_sum + story.points
+			if story.points != nil
+				points_sum = points_sum + story.points
+			end
 		end
 		points_sum
 	end
