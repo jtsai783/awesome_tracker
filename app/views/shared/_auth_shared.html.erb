@@ -9,9 +9,24 @@
 <% end %>
 
 
+<script>
+    $(function () {
+        $('input.guest-login').click(function () {
+            $('#user_username').val('apple');
+            $('#user_password').val('123456');
+        });
+
+        $('input.new-user-link').click(function () {
+            window.location.href = "/users/new";
+        })
+    });
+</script>
+
 <div class="log-in-header">
     <div class="log-in-header-center">
-        <h1><span class="awesome-blue bolder">Awesome</span><span class="awesome-orange bolder">Tracker</span></h1>
+        <div class="log-in-header-text inline-block">
+            <h1><span class="awesome-blue bolder">Awesome</span><span class="awesome-orange bolder">Tracker</span></h1>
+        </div>
     </div>
 </div>
 <div class="log-in-wrapper">
@@ -29,14 +44,18 @@
         </div>
     </form>
 
+
+
     <% if action == :signin %>
+        <input type="button" class="form-control log-in-input bg-blue white bolder new-user-link" value="SIGN UP">
         <form action="<%= session_url %>" method="POST">
             <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
             <input type="hidden" name="user[username]" id="user_username" value="apple">
             <input type="hidden" name="user[password]" id="user_password" value="apple2">
             <div class="input-group">
-                <input type="submit" class="form-control log-in-input bg-blue white bolder" value="Guest Login">
+                <input type="submit" class="form-control log-in-input bg-blue white bolder guest-login" value="Guest Login">
             </div>
         </form>
     <% end %>
 </div>
+

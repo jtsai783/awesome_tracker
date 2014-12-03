@@ -1,4 +1,7 @@
 class SessionsController < ApplicationController
+	before_action :ensure_not_logged_in, except: [:destroy]
+	before_action :set_cache_buster
+
 	def index
 		render :index
 	end

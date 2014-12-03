@@ -26,4 +26,14 @@ class ApplicationController < ActionController::Base
   def ensure_logged_in
   	redirect_to new_session_url if current_user.nil?
   end
+
+  def ensure_not_logged_in
+    redirect_to root_url if current_user
+  end
+
+  def set_cache_buster
+    response.headers["Cache-Control"] = "no-cache, no-store, max-age=0, must-revalidate"
+    response.headers["Pragma"] = "no-cache"
+    response.headers["Expires"] = "Fri, 01 Jan 1990 00:00:00 GMT"
+  end
 end
