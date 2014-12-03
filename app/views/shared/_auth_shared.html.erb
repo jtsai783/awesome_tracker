@@ -1,11 +1,11 @@
 <% if action == :signup %>
 	<% title = "Sign Up" %>
 	<% button_text = "SIGN UP" %>
-	<% action = users_url %>
+	<% action_url = users_url %>
 <% elsif action == :signin %>
 	<% title = "Sign In" %>
 	<% button_text = "SIGN IN" %>
-	<% action = session_url %>
+	<% action_url = session_url %>
 <% end %>
 
 
@@ -16,7 +16,7 @@
 </div>
 <div class="log-in-wrapper">
     <h1 class="awesome-grey auth-title"><strong><%= title %></strong></h1>
-    <form action="<%= action %>" method="POST">
+    <form action="<%= action_url %>" method="POST">
         <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
         <div class="input-group input-group-lg">
             <input type="text" name="user[username]" id="user_username" placeholder="Username" class="form-control log-in-input">
@@ -29,13 +29,14 @@
         </div>
     </form>
 
-
-    <form action="<%= session_url %>" method="POST">
-        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-        <input type="hidden" name="user[username]" id="user_username" value="apple">
-        <input type="hidden" name="user[password]" id="user_password" value="apple2">
-        <div class="input-group">
-            <input type="submit" class="form-control log-in-input bg-blue white bolder" value="Guest Login">
-        </div>
-    </form>
+    <% if action == :signin %>
+        <form action="<%= session_url %>" method="POST">
+            <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+            <input type="hidden" name="user[username]" id="user_username" value="apple">
+            <input type="hidden" name="user[password]" id="user_password" value="apple2">
+            <div class="input-group">
+                <input type="submit" class="form-control log-in-input bg-blue white bolder" value="Guest Login">
+            </div>
+        </form>
+    <% end %>
 </div>

@@ -38,6 +38,7 @@ AwesomeTracker.Views.ProjectIndex = Backbone.CompositeView.extend({
 		var content = this.template({
 			projects: this.collection
 		});
+		$('nav a.link-to-home').text('AwesomeTracker');
 		this.$el.html(content);
 		this.attachSubviews();
 		return this;

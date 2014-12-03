@@ -1,6 +1,7 @@
 'use strict';
 var AwesomeTracker = window.AwesomeTracker;
 var Backbone = window.Backbone;
+var $ = window.$;
 AwesomeTracker.Routers.Router = Backbone.Router.extend({
 	initialize: function (option) {
 		this.$rootEl = option.$rootEl;
@@ -29,6 +30,7 @@ AwesomeTracker.Routers.Router = Backbone.Router.extend({
 		});
 		velocity.fetch();
 		this._swapView(projectShowView);
+		$('nav a.link-to-home').text(project.get('title'));
 	},
 
 	_swapView: function (view) {

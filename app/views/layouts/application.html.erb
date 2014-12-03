@@ -10,23 +10,20 @@
 
 </head>
 <body>
+
 <% if logged_in? %>
 		<nav class="navbar navbar-default navbar-fixed-top navbar-xs">
     <div class="inline-block branding">
         <a class="link-to-home" href="/">AwesomeTracker</a>
     </div>
     <div class="user-control-wrapper float-right">
-        <div class="inline-block">
+        <div class="dropdown">
             <p id="dropdownmenu1" class="dropdown-toggle navbar-username" data-toggle="dropdown" data-userid="<%= current_user.id %>" aria-expanded="true">
                 <%=current_user.username %><span class="caret"></span>
             </p>
-            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+            <ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="dropdownMenu1">
                 <li role="presentation">
-                    <form action="<%= session_url %>" method="POST" role="menuitem" tabindex="-1">
-                        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-                        <input type="hidden" name="_method" value="DELETE">
-                        <input type="submit" class="nav-log-out btn btn-default btn-xs" value="Log Out">
-                    </form>
+                	<%= link_to "Log out", session_url, method: :delete %>
                 </li>
             </ul>
         </div>
