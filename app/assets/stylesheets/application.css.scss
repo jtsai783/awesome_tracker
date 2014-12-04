@@ -97,6 +97,10 @@ h1 {
 	border: 1px solid rgb(187, 187, 187);
 }
 
+.project-index-item > h3 {
+	word-break: break-word;
+}
+
 ul.story-list {
 	display: inline-block;
 	width: 100%;

@@ -21,6 +21,8 @@ AwesomeTracker.Views.ProjectIndexItem = Backbone.View.extend({
 		var content = this.template({
 			project: this.model
 		});
+		
+		this.$el.addClass('grow');
 		this.$el.html(content);
 		return this;
 	}
