@@ -22,7 +22,7 @@ AwesomeTracker.Views.ProjectIndexItem = Backbone.View.extend({
 			project: this.model
 		});
 		
-		this.$el.addClass('grow');
+		this.$el.addClass('border-fade');
 		this.$el.html(content);
 		return this;
 	}

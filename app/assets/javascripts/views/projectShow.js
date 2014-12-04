@@ -83,6 +83,7 @@ AwesomeTracker.Views.ProjectShow = Backbone.CompositeView.extend({
 			project: this.model
 		});
 		$('nav a.link-to-home').text(this.model.get('title'));
+		this.$el.addClass('project-show');
 		this.$el.html(content);
 		this.attachSubviews();
 		$('#list-current, #list-backlog, #list-icebox, #list-done').sortable({
