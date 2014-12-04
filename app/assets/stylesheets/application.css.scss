@@ -103,6 +103,7 @@ ul.story-list {
 	border: thin solid black;
 	background-color: #484F57;
 	min-height: 500px;
+	margin-bottom: 0px;
 }
 
 .story-index-item {
@@ -120,8 +121,13 @@ ul.story-list {
 	margin: 30px;
 }
 
+.new-project-dialog {
+	margin-top: 15px;
+}
+
 .project-index-header {
 	display:inline-block;
+	margin-top: 15px;
 }
 
 .navbar {
@@ -143,6 +149,14 @@ ul.story-list {
 	width: 25%;
 	display: inline-block;
 	float: left;
+	margin-top: 10px;
+	margin-bottom: 0px;
+}
+
+.all-lists-wrapper {
+	width: calc(100% - 50px);
+	float: left;
+	background-color: red;
 }
 
 .story-points {
@@ -150,7 +164,7 @@ ul.story-list {
 	font-weight: bolder;
 }
 
-.inline-block {
+	.inline-block {
 	display: inline-block;
 }
 
@@ -190,6 +204,12 @@ ul.story-list {
 
 .new-user-link {
 	background-color: #C72543;
+}
+
+.project-show-sidebar {
+	float: left;
+	width: 50px;
+	margin-top: 10px;
 }
 
 .clearfix:after {
