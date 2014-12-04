@@ -16,6 +16,7 @@ class Project < ActiveRecord::Base
 
 	def average_vel
 		num_weeks = (Time.zone.now - self.created_at) / 1.day / 7
+		num_weeks = num_weeks.ceil
 		(total_points / num_weeks).round
 	end
 

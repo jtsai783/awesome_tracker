@@ -43,12 +43,22 @@ AwesomeTracker.Views.ProjectShow = Backbone.CompositeView.extend({
 	},
 
 	saveOrds: function (event, ui) {
+		debugger
 		var storyId = ui.item.data('id');
 		var listType = ui.item.parent().data('list');
 		var story = this.collection.get(storyId);
+		// this.removeStoryIndexItem(story);
+		
+		var showview = this;
 		story.save({
 			list: listType
+		}, {
+			success: function () {
+			// showview.addStoryIndexItem(story);
+			}
 		});
+
+
 		var listSelector = '#list-' + listType;
 		var sortArr = $(listSelector).sortable('toArray', {attribute: 'data-id'});
 		var order = 1;
