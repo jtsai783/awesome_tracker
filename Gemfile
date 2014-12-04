@@ -50,3 +50,4 @@ gem 'bootstrap-sass', :git => 'https://github.com/twbs/bootstrap-sass.git', :bra
 gem 'autoprefixer-rails'
 gem 'backbone-on-rails'
 gem 'jquery-ui-rails'
+gem 'thin'

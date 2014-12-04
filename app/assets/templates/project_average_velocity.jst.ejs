@@ -1,6 +1,14 @@
-<div class="average-velocity-numver">
+<script>
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
+</script>
+
+
+<div class="average-velocity-number" data-toggle="tooltip" title="This is your average velocity, it is calculated with your done stories." data-placement="right">
 <%= velocity.get('averageVelocity') %>
-<div>
-<div class="current-load">
+</div>
+<div class="current-load" data-toggle="tooltip" title="This is your current load, try to match your average velocity." data-placement="right">
 <%= velocity.get('currentLoad') %>
 </div>
+
