@@ -29,6 +29,7 @@ html, body {
 	margin-top: 30px;
 	background-color: #F7F6F6;
 	height: 100%;
+	overflow: auto;
 }
 
 .bolder {
@@ -90,15 +91,16 @@ h1 {
 	background-color: white;
 	color: #6392B9;
 	display: inline-block;
-	height: 130px;
+	min-height: 130px;
 	margin: 10px;
 	padding: 5px;
+	padding-bottom: 20px;
 	min-width: 250px;
 	border: 1px solid rgb(187, 187, 187);
 }
 
 .project-index-item > h3 {
-	word-break: break-word;
+	word-break: break-all;
 }
 
 ul.story-list {
@@ -143,7 +145,7 @@ ul.story-list {
 }
 
 .task-list-container {
-	height: calc(100% - 23px);
+	height: calc(100% - 40px);
 }
 
 .branding {
@@ -160,7 +162,7 @@ ul.story-list {
 	float: left;
 	margin-top: 10px;
 	margin-bottom: 0px;
-	height: 100%;
+	height: calc(100% - 10px);
 	margin-left: 3px;
 }
 
@@ -170,6 +172,7 @@ ul.story-list {
 	background-color: #2C2D2F;
 	height: 30px;
 	padding-top: 5px;
+	border: thin black solid;
 }
 
 .all-lists-wrapper {
@@ -181,6 +184,7 @@ ul.story-list {
 .project-show {
 	height: 100%;
 	background-color: #212121;
+	overflow: auto;
 }
 
 .story-points {
@@ -232,7 +236,7 @@ ul.story-list {
 
 .project-show-sidebar {
 	float: left;
-	height: 100%;
+	height: calc(100% - 20px);
 	background-color: #2F3337;
 	width: 50px;
 	margin-top: 10px;
@@ -292,6 +296,11 @@ a:hover {
 	font-size: 2em;
 	font-weight: bolder;
 	text-align: center;
+}
+
+.glyphicon-remove {
+	color: darkred;
+	cursor: pointer;
 }
 
 /* Grow */

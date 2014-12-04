@@ -7,7 +7,8 @@ AwesomeTracker.Views.StoryIndexItem = Backbone.View.extend({
 	template: JST.story_index_item,
 
 	events: {
-		'click button.assign-points': 'assignPoints'
+		'click button.assign-points': 'assignPoints',
+		'click .glyphicon-remove': 'deleteStory'
 	},
 
 	initialize: function () {
@@ -19,6 +20,10 @@ AwesomeTracker.Views.StoryIndexItem = Backbone.View.extend({
 		this.model.save({
 			points: points
 		});
+	},
+
+	deleteStory: function (event) {
+		this.model.destroy();
 	},
 
 	render: function () {
