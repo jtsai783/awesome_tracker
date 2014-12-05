@@ -9,7 +9,7 @@ AwesomeTracker.Views.AverageVelocity = Backbone.View.extend({
 		var content = this.template({
 			velocity: this.model
 		});
-		this.$el.addClass('average-velocity-view')
+		this.$el.addClass('average-velocity-view');
 		this.$el.html(content);
 		return this;
 	}

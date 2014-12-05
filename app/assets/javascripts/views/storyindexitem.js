@@ -23,7 +23,11 @@ AwesomeTracker.Views.StoryIndexItem = Backbone.View.extend({
 	},
 
 	deleteStory: function (event) {
-		this.model.destroy();
+		this.model.destroy({
+			success: function () {
+				this.remove();
+			}.bind(this)
+		});
 	},
 
 	render: function () {

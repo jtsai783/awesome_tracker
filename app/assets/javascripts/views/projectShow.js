@@ -23,7 +23,7 @@ AwesomeTracker.Views.ProjectShow = Backbone.CompositeView.extend({
 		this.listenTo(this.model, 'sync', this.render);
 		this.listenTo(this.velocity, 'sync', this.newVelocityView.render.bind(this.newVelocityView));
 		this.listenTo(this.collection, 'add', this.addStoryIndexItem);
-		this.listenTo(this.collection, 'remove', this.removeStoryIndexItem);
+		// this.listenTo(this.collection, 'remove', this.removeStoryIndexItem);
 	},
 
 	newStory: function () {
@@ -43,7 +43,6 @@ AwesomeTracker.Views.ProjectShow = Backbone.CompositeView.extend({
 	},
 
 	saveOrds: function (event, ui) {
-		debugger
 		var storyId = ui.item.data('id');
 		var listType = ui.item.parent().data('list');
 		var story = this.collection.get(storyId);
@@ -87,25 +86,25 @@ AwesomeTracker.Views.ProjectShow = Backbone.CompositeView.extend({
 		}		
 	},
 
-	removeStoryIndexItem: function (story) {
-		var selector;
-		if (story.get('list') === 'current') {
-			selector = '#list-current';
-		} else if (story.get('list') === 'backlog') {
-			selector = '#list-backlog';
-		} else if (story.get('list') === 'icebox') {
-			selector = '#list-icebox';
-		}	else if (story.get('list') === 'done') {
-			selector = '#list-done';
-		}		
-		var subview = _.find(this.subviews(selector), function (subview) {
-			if (subview.model.get('id') === story.get('id')) {
-				return true;
-			}
-			return false;
-		});
-		this.removeSubview(selector, subview);
-	},
+	// removeStoryIndexItem: function (story) {
+	// 	var selector;
+	// 	if (story.get('list') === 'current') {
+	// 		selector = '#list-current';
+	// 	} else if (story.get('list') === 'backlog') {
+	// 		selector = '#list-backlog';
+	// 	} else if (story.get('list') === 'icebox') {
+	// 		selector = '#list-icebox';
+	// 	}	else if (story.get('list') === 'done') {
+	// 		selector = '#list-done';
+	// 	}		
+	// 	var subview = _.find(this.subviews(selector), function (subview) {
+	// 		if (subview.model.get('id') === story.get('id')) {
+	// 			return true;
+	// 		}
+	// 		return false;
+	// 	});
+	// 	this.removeSubview(selector, subview);
+	// },
 
 	render: function () {
 		var content = this.template({
