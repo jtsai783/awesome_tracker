@@ -117,6 +117,12 @@ ul.story-list {
 	background-color: #E4EFF7;
 	border: 1px solid white;
 	min-height: 25px;
+	transition-duration: 0.3s;
+	transition-property: background-color;
+}
+
+.story-index-item:hover {
+	background-color: #DAEBCF;
 }
 
 .float-right {
