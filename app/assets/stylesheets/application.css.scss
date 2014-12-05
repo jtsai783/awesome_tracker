@@ -117,8 +117,8 @@ ul.story-list {
 	background-color: #E4EFF7;
 	border: 1px solid white;
 	min-height: 25px;
-	transition-duration: 0.3s;
-	transition-property: background-color;
+	max-height: 0;
+	transition: background-color 0.3s, max-height 1s;
 }
 
 .story-index-item:hover {
@@ -342,3 +342,15 @@ a:hover {
   /* Hack to improve aliasing on mobile/tablet devices */
 }
 
+.open-detail {
+	max-height: 150px;
+	transition-duration: 1s;
+}
+
+.expanded-story-index-item {
+	display: none;
+}
+
+.show-hidden {
+	display: block;
+}

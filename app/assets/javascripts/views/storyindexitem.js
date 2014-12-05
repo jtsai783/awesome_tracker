@@ -8,7 +8,18 @@ AwesomeTracker.Views.StoryIndexItem = Backbone.View.extend({
 
 	events: {
 		'click button.assign-points': 'assignPoints',
-		'click .glyphicon-remove': 'deleteStory'
+		'click .glyphicon-remove': 'deleteStory',
+		// 'click': 'open'
+	},
+
+	open: function () {
+		if (this.$el.hasClass('open-detail')) {
+			this.$el.removeClass('open-detail');
+			this.$el.find('.expanded-story-index-item').removeClass('show-hidden');
+		} else {
+			this.$el.addClass('open-detail');
+			this.$el.find('.expanded-story-index-item').addClass('show-hidden');
+		}
 	},
 
 	initialize: function () {
